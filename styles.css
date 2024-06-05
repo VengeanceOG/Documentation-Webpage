@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/** Navigation Styling */
+
+/*? Fixing navbar to left and adjusting dimensions */
+nav {
+  height: 100vh;
+  width: min(30vw, 225px);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*? navbar ul and header to not take height of img, instead fill height of parent */
+nav ul,
+#main-header {
+  height: 100%;
+}
+
+/*? Fixing dimensions and styling for navbar list items */
+.head-item {
+  height: 12%;
+  border-bottom: 2px solid #e5ebea;
+}
+
+nav li:not(.head-item) {
+  height: 11%;
+  background-color: #284b63;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav li:nth-child(odd) {
+  background-color: #153243;
+}
+
+/*? Adjusting positions and styling of main header */
+#main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  font-family: Overpass;
+  font-weight: 900;
+  color: #e5ebea;
+  font-size: 1.4em;
+  text-shadow: 1.5px 1.5px 1px #284b63;
+}
+
+#logo {
+  height: 55%;
+}
+
+#desc {
+  font-size: 0.65em;
+  color: #ffd43b;
+}
+
+#logo-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+li a {
+  text-decoration: none;
+  color: #e5ebea;
+  font-family: Overpass;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+/** Main Content Styling */
+
+main {
+  background-color: #e5ebea;
+  margin-left: min(30vw, 225px);
+  width: max(70vw, calc(100vw - 225px));
+  min-height: 100vh;
+  padding: 1.2em;
+  font-family: "Source Sans 3", "Helvetica Neue", sans-serif;
+  font-size: 1.2em;
+}
+
+/*? Border and gap at the end of a section */
+section {
+  border-bottom: #284b638c 2px solid;
+  padding-bottom: 1.6em;
+}
+
+/*? No border at the end */
+section:last-of-type {
+  border-bottom: none;
+}
+
+main header {
+  font-family: Oswald, "Helvetica Neue";
+  margin-bottom: 0.2em;
+  margin-top: 1.2em;
+  font-size: 2.1em;
+}
+
+/*? No margin on the first header as there will be padding of main */
+section:first-of-type header {
+  margin-top: 0;
+}
+
+main p,
+h3 {
+  margin: 0.7em 0;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+main ul {
+  margin-left: 3em;
+}
+
+code {
+  display: block;
+  background-color: #dbd9db;
+  width: 75%;
+  height: 100px;
+  padding: 1.2em;
+  text-wrap: nowrap;
+  overflow: auto;
+  border-radius: 5px;
+  margin: 0.8em;
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+/*? Adding a Note: before each note  */
+.note::before {
+  content: "Note:";
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.note {
+  background-color: #ffd53b6c;
+  padding: 1.2em;
+  border-radius: 4px;
+}
+
+/** Styling for smaller width devices */
+
+@media (max-width: 750px) {
+  /** Fixing navbar to top */
+
+  /*? Remove all the navbar items except heading */
+  nav ul li:not(.head-item) {
+    display: none;
+  }
+
+  nav,
+  nav ul,
+  #main-header {
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 60px;
+  }
+
+  .head-item {
+    height: 100%;
+  }
+
+  /** Adjusting main elements */
+
+  main {
+    margin-left: 0;
+    width: 100vw;
+  }
+
+  code {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  main ul {
+    margin-left: 0;
+  }
+}
